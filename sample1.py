@@ -6,7 +6,7 @@ from flask import Flask, jsonify, request
 app = Flask(__name__)
 
 # Deliberately fake example key; never store real credentials in source code.
-SAMPLE_API_KEY = "demo_fake_key_12345"
+SAMPLE_API_KEY = os.getenv("SAMPLE_API_KEY")
 
 @app.get("/")
 def index():
