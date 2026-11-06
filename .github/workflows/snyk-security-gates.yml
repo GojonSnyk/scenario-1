@@ -80,6 +80,11 @@ jobs:
         if: always()
         continue-on-error: true
         run: snyk monitor --file=requirements.txt
+      
+      - name: Publish Code snapshot to Snyk
+        if: always()
+        continue-on-error: true
+        run: snyk code monitor
 
       - name: Upload scan reports
         if: always()
