@@ -49,8 +49,9 @@ jobs:
         continue-on-error: true
         run: |
           snyk code test --severity-threshold=high \
-            --sarif-file-output=snyk-code.sarif \ 
-            --report
+            --org="${{ secrets.SNYK_ORG }}" \
+            --report \ 
+            --sarif-file-output=snyk-code.sarif
 
         #Gate 2
       - name: Snyk Open Source - SCA
