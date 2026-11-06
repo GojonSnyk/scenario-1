@@ -48,8 +48,7 @@ jobs:
         id: code
         continue-on-error: true
         run: |
-          snyk code test --severity-threshold=high \
-            --org="${{ secrets.SNYK_ORG }}" \
+          snyk code test --org="${{ secrets.SNYK_ORG }}" \
             --report \
             --sarif-file-output=snyk-code.sarif
 
