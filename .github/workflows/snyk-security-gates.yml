@@ -50,7 +50,7 @@ jobs:
         run: |
           snyk code test --severity-threshold=high \
             --org="${{ secrets.SNYK_ORG }}" \
-            --report \ 
+            --report \
             --sarif-file-output=snyk-code.sarif
 
         #Gate 2
