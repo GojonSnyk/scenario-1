@@ -49,7 +49,7 @@ jobs:
         continue-on-error: true
         run: |
           snyk code test --org="${{ secrets.SNYK_ORG }}" \
-            --project-name="${{ github.repository.name }}" \
+            --project-name="${{ secrets.SNYK_PROJNAME }}" \
             --report \
             --sarif-file-output=snyk-code.sarif
 
