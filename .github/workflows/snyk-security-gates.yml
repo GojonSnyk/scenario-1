@@ -49,7 +49,8 @@ jobs:
         continue-on-error: true
         run: |
           snyk code test --severity-threshold=high \
-            --sarif-file-output=snyk-code.sarif
+            --sarif-file-output=snyk-code.sarif \ 
+            --report
 
         #Gate 2
       - name: Snyk Open Source - SCA
@@ -80,11 +81,6 @@ jobs:
         if: always()
         continue-on-error: true
         run: snyk monitor --file=requirements.txt
-      
-      - name: Publish Code snapshot to Snyk
-        if: always()
-        continue-on-error: true
-        run: snyk code monitor
 
       - name: Upload scan reports
         if: always()
