@@ -71,7 +71,7 @@ jobs:
         #Gate 2 results
       - name: Upload Snyk Open Source results
         if: always() && hashFiles('snyk-sca.sarif') != ''
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: snyk-sca.sarif
           category: snyk-open-source
